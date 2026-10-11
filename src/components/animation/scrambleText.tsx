@@ -5,13 +5,13 @@
 import { useEffect, useState } from "react"
 
 export function ScrambleTextAnimation({
-  text,
+  children,
   duration = 1000,
   ...props
 }: {
-  text: string
+  children: string
   duration?: number
-} & React.ComponentProps<'span'>) {
+} & React.ComponentProps<'p'>) {
   const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%&*"
   const [displayText, setDisplayText] = useState("")
 
@@ -23,9 +23,9 @@ export function ScrambleTextAnimation({
       if (startTime === null) startTime = time
 
       const progress = Math.min((time - startTime) / duration, 1)
-      const resolvedCount = Math.floor(progress * text.length)
+      const resolvedCount = Math.floor(progress * children.length)
 
-      const result = [...text].map((char, index) => {
+      const result = [...children].map((char, index) => {
         if (char === " ") return " "
         if (index < resolvedCount) return char
 
@@ -39,12 +39,12 @@ export function ScrambleTextAnimation({
       if (progress < 1) {
         frameId = requestAnimationFrame(animate)
       } else {
-        setDisplayText(text)
+        setDisplayText(children)
       }
     }
 
     setDisplayText(
-      [...text]
+      [...children]
         .map((char) =>
           char === " "
             ? " "
@@ -56,7 +56,7 @@ export function ScrambleTextAnimation({
     frameId = requestAnimationFrame(animate)
 
     return () => cancelAnimationFrame(frameId)
-  }, [text, duration, characters])
+  }, [children, duration, characters])
 
-  return <span {...props}>{displayText}</span>
+  return <p {...props}>{displayText}</p>
 }

@@ -16,10 +16,10 @@ export const metadata: Metadata = (() => {
 export default function Page() {
   return (
     <main className='flex min-h-svh flex-col items-center justify-center p-8'>
-      <p className='flex gap-4 items-center'>
-        <ScrambleTextAnimation duration={450} className='text-3xl' text='404' />
-        <ScrambleTextAnimation duration={450} className='text-2xl' text='Not Found' />
-      </p>
+      <div className='flex gap-4 items-center'>
+        <ScrambleTextAnimation duration={500} className='text-3xl'>404</ScrambleTextAnimation>
+        <ScrambleTextAnimation duration={500} className='text-2xl'>Not Found</ScrambleTextAnimation>
+      </div>
     </main>
   )
 }
