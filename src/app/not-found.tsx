@@ -3,7 +3,7 @@ import { ScrambleTextAnimation } from '@/components/animation/scrambleText'
 
 export const metadata: Metadata = (() => {
   const title = 'Not Found'
-  const description = "The page you are looking for doesn't exist."
+  const description = "This page doesn't exist."
 
   return {
     title,

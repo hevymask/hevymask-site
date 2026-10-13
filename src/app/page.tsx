@@ -34,7 +34,6 @@ import {
   SiVite,
   SiShadcnui,
   SiTanstack,
-  SiNextdoor,
   SiNextdotjs,
   SiObsstudio,
   SiZod,
@@ -42,12 +41,8 @@ import {
 } from 'react-icons/si'
 
 export const metadata: Metadata = (() => {
-  const subtitle = env.SUBTITLE
-
   return {
-    title: `${subtitle} - ${env.TITLE}`,
-    openGraph: { title: subtitle },
-    twitter: { title: subtitle },
+    title: `${env.SUBTITLE} - ${env.TITLE}`
   }
 })()
 
