@@ -7,7 +7,10 @@ const envSchema = z.object({
   
   URL: z.url(),
   NAME: z.string(),
-  TWITTER_ACCOUNT: z.string()
+
+  TIKTOK_ACCOUNT: z.string(),
+  TWITTER_ACCOUNT: z.string(),
+  GITHUB_ACCOUNT: z.string()
 })
 
 export const env = envSchema.parse(process.env)
