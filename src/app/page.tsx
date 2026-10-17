@@ -19,10 +19,9 @@ export default function Page() {
     <main>
       <Header />
       <DownButton />
-
+      <BackgroundAnimation />
+      
       <div className='min-h-svh flex items-center pl-5 md:pl-10'>
-        <BackgroundAnimation />
-
         <h1 className='flex flex-col text-5xl md:text-8xl'>
           <TitleAnimation />
         </h1>

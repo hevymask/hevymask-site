@@ -20,8 +20,17 @@ export function BackgroundAnimation() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5, delay: animationEndTime }}
-      className='absolute bottom-0 right-0 -z-10'
-    />
+      className='absolute bottom-0 right-0 -z-10 left-0'
+    >
+      <video
+        src="background.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="w-full h-full object-cover -z-10"
+      />
+    </motion.div>
   )
 }
 
