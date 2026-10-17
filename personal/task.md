@@ -6,5 +6,3 @@
 
   - twitter
     - images
-
-- components/animationscrambleText.txt
