@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next'
-import { env } from '@/lib/env'
+import { serverEnv } from '@/lib/serverEnv'
 
 export const dynamic = 'force-static'
 
@@ -10,6 +10,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/'
     },
 
-    sitemap: `${env.URL}/sitemap.xml`
+    sitemap: `${serverEnv.URL}/sitemap.xml`
   }
 }

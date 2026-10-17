@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
-import { cn } from '@/lib/utils'
-import { env } from '@/lib/env'
+import { cn } from 'cn'
+
+// Env
+import { serverEnv } from '@/lib/serverEnv'
+import { clientEnv } from '@/lib/clientEnv'
 
 // Design
 import { Oxanium } from 'next/font/google'
@@ -10,34 +13,34 @@ import '@/index.css'
 const oxanium = Oxanium({ subsets: ['latin'], variable: '--font-sans' })
 
 export const metadata: Metadata = {
-  metadataBase: env.URL,
+  metadataBase: serverEnv.URL,
 
   title: {
-    default: env.TITLE,
-    template: `%s - ${env.TITLE}`,
+    default: serverEnv.TITLE,
+    template: `%s - ${serverEnv.TITLE}`,
   },
 
-  description: env.DESCRIPTION,
+  description: serverEnv.DESCRIPTION,
 
   authors: {
-    name: env.NAME
+    name: serverEnv.NAME
   },
 
-  keywords: [env.NAME, 'Portfolio', 'The anonymous digital artist'],
+  keywords: [serverEnv.NAME, 'Portfolio', 'The anonymous digital artist'],
 
   openGraph: {
-    title: env.SUBTITLE,
-    description: env.DESCRIPTION,
-    siteName: env.TITLE,
+    title: clientEnv.NEXT_PUBLIC_SUBTITLE,
+    description: serverEnv.DESCRIPTION,
+    siteName: serverEnv.TITLE,
     locale: "en_US",
     type: 'profile'
   },
 
   twitter: {
-    site: env.TWITTER_ACCOUNT,
-    creator: env.TWITTER_ACCOUNT,
-    description: env.DESCRIPTION,
-    title: env.SUBTITLE,
+    site: serverEnv.TWITTER_ACCOUNT,
+    creator: serverEnv.TWITTER_ACCOUNT,
+    description: serverEnv.DESCRIPTION,
+    title: clientEnv.NEXT_PUBLIC_SUBTITLE,
     card: 'summary'
   }
 }

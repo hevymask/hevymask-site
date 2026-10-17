@@ -1,8 +1,7 @@
 import { z } from 'zod'
 
-const envSchema = z.object({
+const serverEnvSchema = z.object({
   TITLE: z.string(),
-  SUBTITLE: z.string(),
   DESCRIPTION: z.string(),
   
   URL: z.url(),
@@ -13,4 +12,4 @@ const envSchema = z.object({
   GITHUB_ACCOUNT: z.string()
 })
 
-export const env = envSchema.parse(process.env)
+export const serverEnv = serverEnvSchema.parse(process.env)
