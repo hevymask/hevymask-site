@@ -12,7 +12,7 @@ import { cn } from 'cn'
 const subtitle = clientEnv.NEXT_PUBLIC_SUBTITLE.split(' ')
 
 const delay = 0.6
-const animationEndTime = (subtitle.length + 1) * delay
+const animationEndTime = (1 + subtitle.length + 1) * delay
 
 export function BackgroundAnimation() {
   return (
@@ -20,15 +20,15 @@ export function BackgroundAnimation() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5, delay: animationEndTime }}
-      className='absolute bottom-0 right-0 -z-10 left-0'
+      className='fixed inset-0 -z-10'
     >
       <video
-        src="background.mp4"
+        src='background.mp4'
         autoPlay
         loop
         muted
         playsInline
-        className="w-full h-full object-cover -z-10"
+        className='size-full object-cover'
       />
     </motion.div>
   )
@@ -47,7 +47,7 @@ export function TitleAnimation() {
       className='inline-block'
       initial={{ opacity: 0, x: -100 }}
       animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.5, delay: delay * index, ease: [0, 1, 0, 1] }}
+      transition={{ duration: 0.5, delay: (1 + index) * delay, ease: [0, 1, 0, 1] }}
     >
       {word}
     </motion.span>
