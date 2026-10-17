@@ -7,7 +7,7 @@ import type { Route } from 'next'
 import Link from 'next/link'
 import { buttonVariants } from '@/components/ui/button'
 
-export function Header({ delay, fixed }: { delay?: number, fixed?: boolean }) {
+export function Header({ delay, className }: { delay?: number, className?: string }) {
   const links: { link: Route, name: string }[] = [
     {
       link: '/',
@@ -32,7 +32,7 @@ export function Header({ delay, fixed }: { delay?: number, fixed?: boolean }) {
 
   return (
     <motion.header
-      className={cn('p-6 w-full flex items-center', fixed ? 'fixed' : 'sticky')}
+      className={cn('p-6 w-full flex items-center sticky', className)}
     >
       <div className='ml-auto flex items-center'>
         {links.map((linkData, index) => (

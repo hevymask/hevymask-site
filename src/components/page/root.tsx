@@ -20,23 +20,16 @@ export function BackgroundAnimation() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5, delay: animationEndTime }}
-      className='fixed inset-0 -z-10'
+      className='absolute inset-0 -z-10'
     >
-      <video
-        src='background.mp4'
-        autoPlay
-        loop
-        muted
-        playsInline
-        className='size-full object-cover'
-      />
+      <div className='bg-background size-full' />
     </motion.div>
   )
 }
 
 export function Header() {
   return (
-    <LocalHeader delay={animationEndTime} fixed />
+    <LocalHeader delay={animationEndTime} className='fixed' />
   )
 }
 
@@ -45,7 +38,7 @@ export function TitleAnimation() {
     <motion.span
       key={index}
       className='inline-block'
-      initial={{ opacity: 0, x: -100 }}
+      initial={{ opacity: 0, x: -50 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5, delay: (1 + index) * delay, ease: [0, 1, 0, 1] }}
     >
@@ -60,7 +53,12 @@ export function DownButton() {
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: animationEndTime, ease: [0, 1, 0, 1] }}
-      className={cn(buttonVariants({ variant: 'outline' }), 'fixed bottom-0 left-1/2 -translate-x-1/2 rounded-full my-5 cursor-pointer')}
+      className={cn(buttonVariants({ variant: 'outline' }), 'absolute bottom-0 left-1/2 -translate-x-1/2 rounded-full my-6 cursor-pointer')}
+      onClick={() => {
+        document.getElementById('secound')?.scrollIntoView({
+          behavior: 'smooth'
+        })
+      }}
     >
       <FaArrowDown className='size-4' />
     </motion.div>
