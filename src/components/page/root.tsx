@@ -4,6 +4,9 @@ import { motion } from 'motion/react'
 import { clientEnv } from '@/lib/clientEnv'
 import { buttonVariants } from '@/components/ui/button'
 
+// Hooks
+import { useState, useEffect } from 'react'
+
 // Components
 import { Header as LocalHeader } from '@/components/header'
 import { FaArrowDown } from 'react-icons/fa6'
@@ -14,7 +17,7 @@ const subtitle = clientEnv.NEXT_PUBLIC_SUBTITLE.split(' ')
 const delay = 0.6
 const animationEndTime = (1 + subtitle.length + 1) * delay
 
-export function BackgroundAnimation() {
+export function Background() {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -33,7 +36,7 @@ export function Header() {
   )
 }
 
-export function TitleAnimation() {
+export function Title() {
   return subtitle.map((word, index) => (
     <motion.span
       key={index}
@@ -63,4 +66,18 @@ export function DownButton() {
       <FaArrowDown className='size-4' />
     </motion.div>
   )
+}
+
+export function DropElement({ children }: { children: React.ReactNode }) {
+  const [visible, setVisible] = useState(false)
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setVisible(true)
+    }, animationEndTime * 1000)
+
+    return () => clearTimeout(timer)
+  }, [])
+
+  if (visible) return children
 }
