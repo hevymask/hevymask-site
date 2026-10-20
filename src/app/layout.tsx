@@ -50,10 +50,12 @@ export default function Layout({ children }: LayoutProps<'/'>) {
     <html
       lang='en'
       className={cn('h-full antialiased', oxanium.variable)}
+
+      // Because of ThemeProvider
       suppressHydrationWarning
     >
       <body className='min-h-full flex flex-col'>
-        <ThemeProvider/>
+        <ThemeProvider />
         {children}
       </body>
     </html>

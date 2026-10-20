@@ -42,7 +42,7 @@ type Skills = {
   searchName?: string
 }[]
 
-const skills: Skills = [
+export const mySkills: Skills = [
   { name: 'VSCode', icon: VscVscode },
   { name: 'HTML', icon: SiHtml5 },
   { name: 'JavaScript', icon: SiJavascript },
@@ -65,7 +65,7 @@ const skills: Skills = [
   { name: 'Zod', icon: SiZod }
 ]
 
-const goalSkills: Skills = [
+export const MyGoalSkills: Skills = [
   { name: 'GIMP', icon: SiGimp },
   { name: 'DaVinti Resolve', icon: SiDavinciresolve },
   { name: 'Figma', icon: SiFigma },
