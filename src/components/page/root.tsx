@@ -2,6 +2,7 @@
 
 import { cn } from 'cn'
 import { clientEnv } from '@/lib/clientEnv'
+import { mySkills } from '@/lib/skills'
 import { headerLinks } from '@/components/header'
 import { buttonVariants } from '@/components/ui/button'
 
@@ -52,11 +53,11 @@ export function Header() {
 export function DownButton() {
   return (
     <motion.div
-      initial={{ opacity: 0, y: -50 }}
+      initial={{ opacity: 0, y: -500 }}
       animate={{ opacity: 1, y: 0 }}
 
       transition={{
-        duration: 0.5,
+        duration: 1.5,
         delay: subtitleAnimationTime,
         ease: [0, 1, 0, 1]
       }}
@@ -94,9 +95,8 @@ export function FirstSectionBackground() {
           delay: subtitleAnimationTime
         }}
 
-        className='absolute inset-0 -z-10'
+        className='bg-background size-full absolute inset-0 -z-10 flex'
       >
-        <div className='bg-background w-[65%] md:w-[75%] h-full' />
       </motion.div>
     </>
   )
@@ -111,7 +111,7 @@ export function FirstSectionTitle() {
           animate={{ opacity: 1, x: 0 }}
 
           transition={{
-            duration: 0.5,
+            duration: 0.6,
             delay: (1 + index) * subtitleDelay,
             ease: [0, 1, 0, 1]
           }}

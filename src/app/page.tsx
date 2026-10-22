@@ -34,7 +34,7 @@ export default function Page() {
       <DropElement>
         {/* Secound Section */}
         <div className='min-h-svh flex flex-col justify-center' id='secoundSection'>
-
+          
         </div>
       </DropElement>
     </main>
