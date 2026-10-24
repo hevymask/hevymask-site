@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
       }
     }
   },
-  
+
   output: 'export',
   typedRoutes: true
 }

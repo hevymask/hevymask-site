@@ -1,8 +1,7 @@
 'use client'
 
 import { cn } from 'cn'
-import { clientEnv } from '@/lib/clientEnv'
-import { mySkills } from '@/lib/skills'
+import { projectConfig } from '@/lib/projectConfig'
 import { headerLinks } from '@/components/header'
 import { buttonVariants } from '@/components/ui/button'
 
@@ -14,11 +13,11 @@ import Link from 'next/link'
 import { motion } from 'motion/react'
 import { FaArrowDown } from 'react-icons/fa6'
 
-const subtitleArray = clientEnv.NEXT_PUBLIC_SUBTITLE.split(' ')
-const subtitleDelay = 0.5
+const headlineArray = projectConfig.headline.split(' ')
+const headlineDelay = 0.6
 
-// Leave a gap of one space on each side
-const subtitleAnimationTime = (1 + subtitleArray.length + 1) * subtitleDelay
+// Leave a gap of one space
+const headlineAnimationTime = (1 + headlineArray.length + 1) * headlineDelay
 
 export function Header() {
   return (
@@ -31,7 +30,7 @@ export function Header() {
               animate={{ opacity: 1, y: 0 }}
 
               transition={{
-                delay: subtitleAnimationTime + (headerLinksIndex * 0.1),
+                delay: headlineAnimationTime + (headerLinksIndex * 0.1),
                 duration: 1,
                 ease: [0, 1, 0, 1]
               }}
@@ -53,12 +52,12 @@ export function Header() {
 export function DownButton() {
   return (
     <motion.div
-      initial={{ opacity: 0, y: -500 }}
+      initial={{ opacity: 0, y: -400 }}
       animate={{ opacity: 1, y: 0 }}
 
       transition={{
-        duration: 1.5,
-        delay: subtitleAnimationTime,
+        duration: 1,
+        delay: headlineAnimationTime,
         ease: [0, 1, 0, 1]
       }}
 
@@ -92,7 +91,7 @@ export function FirstSectionBackground() {
 
         transition={{
           duration: 0.6,
-          delay: subtitleAnimationTime
+          delay: headlineAnimationTime
         }}
 
         className='bg-background size-full absolute inset-0 -z-10 flex'
@@ -102,17 +101,17 @@ export function FirstSectionBackground() {
   )
 }
 
-export function FirstSectionTitle() {
+export function Headline() {
   return (
     <h1 className='flex flex-col text-5xl md:text-8xl'>
-      {subtitleArray.map((word, index) => (
+      {headlineArray.map((word, index) => (
         <motion.span
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
 
           transition={{
             duration: 0.6,
-            delay: (1 + index) * subtitleDelay,
+            delay: (1 + index) * headlineDelay,
             ease: [0, 1, 0, 1]
           }}
 
@@ -133,7 +132,7 @@ export function DropElement({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const timer = setTimeout(() => {
       setVisible(true)
-    }, subtitleAnimationTime * 1000)
+    }, headlineAnimationTime * 1000)
 
     return () => clearTimeout(timer)
   }, [])

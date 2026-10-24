@@ -1,15 +1,15 @@
 import type { MetadataRoute } from 'next'
-import { serverEnv } from '@/lib/serverEnv'
+import { projectConfig } from '@/lib/projectConfig'
 
 export const dynamic = 'force-static'
 
-export default function robots(): MetadataRoute.Robots {
+export default function(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: '*',
       allow: '/'
     },
 
-    sitemap: `${serverEnv.URL}/sitemap.xml`
+    sitemap: `${projectConfig.url}/sitemap.xml`
   }
 }

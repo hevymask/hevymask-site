@@ -4,9 +4,8 @@ import { VscVscode } from 'react-icons/vsc'
 import { IoIosMusicalNote } from 'react-icons/io'
 
 import {
-  FaCode,
-  FaWifi,
-  FaAws
+  FaAws,
+  FaMicrochip
 } from 'react-icons/fa6'
 
 import {
@@ -16,7 +15,6 @@ import {
   SiTauri,
   SiTypescript,
   SiFigma,
-  SiCapacitor,
   SiCloudflare,
   SiSupabase,
   SiReact,
@@ -38,13 +36,14 @@ import {
   SiHono,
   SiGoogleappsscript,
   SiPython,
-  SiFirebase
+  SiFirebase,
+  SiExpo,
+  SiCplusplus
 } from 'react-icons/si'
 
 type Skills = {
   name: string,
-  icon: IconType,
-  searchName?: string
+  icon: IconType
 }[]
 
 export const mySkills: Skills = [
@@ -56,7 +55,7 @@ export const mySkills: Skills = [
   { name: 'Google Apps Script', icon: SiGoogleappsscript },
   { name: 'Python', icon: SiPython },
   { name: 'Node.js', icon: SiNodedotjs },
-  { name: 'Express', icon: SiExpress, searchName: 'Express framework' },
+  { name: 'Express js', icon: SiExpress },
   { name: 'Firebase', icon: SiFirebase },
   { name: 'TypeScript', icon: SiTypescript },
   { name: 'npm', icon: SiNpm },
@@ -73,17 +72,18 @@ export const mySkills: Skills = [
   { name: 'OBS', icon: SiObsstudio },
   { name: 'Zod', icon: SiZod },
   { name: 'Hono', icon: SiHono },
-  { name: 'Capacitor', icon: SiCapacitor, searchName: 'Capacitor framework' }
+  { name: 'React Native', icon: SiReact },
+  { name: 'Expo', icon: SiExpo }
 ]
 
-export const MyGoalSkills: Skills = [
+export const myGoalSkills: Skills = [
   { name: 'Gimp', icon: SiGimp },
   { name: 'DaVinti Resolve', icon: SiDavinciresolve },
   { name: 'Figma', icon: SiFigma },
   { name: 'Supabase', icon: SiSupabase },
   { name: 'GDScript', icon: SiGodotengine },
-  { name: 'ESP32', icon: FaWifi },
-  { name: 'C++', icon: FaCode, searchName: 'Cpp language' },
+  { name: 'ESP32', icon: FaMicrochip },
+  { name: 'Cpp', icon: SiCplusplus },
   { name: 'AWS', icon: FaAws },
   { name: 'FL Studio', icon: IoIosMusicalNote }
 ]

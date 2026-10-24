@@ -1,42 +1,42 @@
 import type { Metadata } from 'next'
-
-// Env
-import { serverEnv } from '@/lib/serverEnv'
-import { clientEnv } from '@/lib/clientEnv'
+import { projectConfig } from '@/lib/projectConfig'
 
 // Components
 import {
   FirstSectionBackground,
-  FirstSectionTitle,
+  Headline,
   DownButton,
   DropElement,
   Header
-} from '@/components/page/root'
+} from '@/components/provider/root'
 
 export const metadata: Metadata = (() => {
   return {
-    title: `${clientEnv.NEXT_PUBLIC_SUBTITLE} - ${serverEnv.TITLE}`
+    title: `${projectConfig.headline} - ${projectConfig.appName}`
   }
 })()
 
-export default function Page() {
+export default function() {
   return (
-    <main className='overflow-x-hidden'>
+    <>
       <Header />
-      <DownButton />
 
-      {/* First Section */}
-      <div className='min-h-svh flex flex-col justify-center ml-5 md:ml-10'>
-        <FirstSectionBackground />
-        <FirstSectionTitle />
-      </div>
+      <main>
+        <DownButton />
 
-      <DropElement>
-        {/* Secound Section */}
-        <div className='min-h-svh flex flex-col justify-center' id='secoundSection'>
-          
+        {/* First Section */}
+        <div className='min-h-svh flex flex-col justify-center ml-5 md:ml-10'>
+          <FirstSectionBackground />
+          <Headline />
         </div>
-      </DropElement>
-    </main>
+
+        <DropElement>
+          {/* Secound Section */}
+          <div className='min-h-svh flex flex-col justify-center' id='secoundSection'>
+
+          </div>
+        </DropElement>
+      </main>
+    </>
   )
 }

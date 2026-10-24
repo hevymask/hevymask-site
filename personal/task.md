@@ -1,4 +1,6 @@
-- metadata
+- Create README.md
+
+- Set metadata
   - icon
 
   - ogp

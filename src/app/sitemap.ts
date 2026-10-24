@@ -1,12 +1,12 @@
 import type { MetadataRoute } from 'next'
-import { serverEnv } from '@/lib/serverEnv'
+import { projectConfig } from '@/lib/projectConfig'
 
 export const dynamic = 'force-static'
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default function(): MetadataRoute.Sitemap {
   return [
     {
-      url: serverEnv.URL,
+      url: projectConfig.url,
       lastModified: new Date('2026-10-11')
     }
   ]

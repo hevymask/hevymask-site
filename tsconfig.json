@@ -13,7 +13,7 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "incremental": true,
-    
+
     "plugins": [
       {
         "name": "next"
@@ -32,7 +32,7 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-  ],
-  
+, ".project/projectConfig.ts"  ],
+
   "exclude": ["node_modules"]
 }

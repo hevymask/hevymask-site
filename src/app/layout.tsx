@@ -1,9 +1,6 @@
 import type { Metadata } from 'next'
 import { cn } from 'cn'
-
-// Env
-import { serverEnv } from '@/lib/serverEnv'
-import { clientEnv } from '@/lib/clientEnv'
+import { projectConfig } from '@/lib/projectConfig'
 
 // Design
 import { Oxanium } from 'next/font/google'
@@ -13,34 +10,32 @@ import '@/index.css'
 const oxanium = Oxanium({ subsets: ['latin'], variable: '--font-sans' })
 
 export const metadata: Metadata = {
-  metadataBase: serverEnv.URL,
+  metadataBase: projectConfig.url,
 
   title: {
-    default: serverEnv.TITLE,
-    template: `%s - ${serverEnv.TITLE}`,
+    default: projectConfig.appName,
+    template: `%s - ${projectConfig.appName}`,
   },
 
-  description: serverEnv.DESCRIPTION,
+  description: projectConfig.description,
 
   authors: {
-    name: serverEnv.NAME
+    name: projectConfig.auther
   },
 
-  keywords: [serverEnv.NAME, 'Portfolio', 'The anonymous digital artist'],
+  keywords: [projectConfig.appName, 'Portfolio', 'The anonymous digital artist'],
 
   openGraph: {
-    title: clientEnv.NEXT_PUBLIC_SUBTITLE,
-    description: serverEnv.DESCRIPTION,
-    siteName: serverEnv.TITLE,
+    title: projectConfig.headline,
+    description: projectConfig.description,
+    siteName: projectConfig.appName,
     locale: "en_US",
     type: 'profile'
   },
 
   twitter: {
-    site: serverEnv.TWITTER_ACCOUNT,
-    creator: serverEnv.TWITTER_ACCOUNT,
-    description: serverEnv.DESCRIPTION,
-    title: clientEnv.NEXT_PUBLIC_SUBTITLE,
+    description: projectConfig.description,
+    title: projectConfig.headline,
     card: 'summary'
   }
 }
@@ -54,7 +49,7 @@ export default function Layout({ children }: LayoutProps<'/'>) {
       // Because of ThemeProvider
       suppressHydrationWarning
     >
-      <body className='min-h-full flex flex-col'>
+      <body className='min-h-full flex flex-col overflow-x-hidden'>
         <ThemeProvider />
         {children}
       </body>
