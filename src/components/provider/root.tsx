@@ -12,6 +12,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { motion } from 'motion/react'
 import { FaArrowDown } from 'react-icons/fa6'
+import Image from 'next/image'
 
 const headlineArray = projectConfig.headline.split(' ')
 const headlineDelay = 0.6
@@ -19,9 +20,9 @@ const headlineDelay = 0.6
 // Leave a gap of one space
 const headlineAnimationTime = (1 + headlineArray.length + 1) * headlineDelay
 
-export function Header() {
+function Header() {
   return (
-    <header className={cn('p-6 w-full flex items-center sticky', 'fixed')}>
+    <header className={cn('py-6 px-3 w-full flex items-center sticky', 'fixed')}>
       <div className='ml-auto flex items-center'>
         {headerLinks.map((headerLinkData, headerLinksIndex) => (
           <Link key={headerLinksIndex} href={headerLinkData.link}>
@@ -49,7 +50,7 @@ export function Header() {
   )
 }
 
-export function DownButton() {
+function DownButton() {
   return (
     <motion.div
       initial={{ opacity: 0, y: -400 }}
@@ -78,7 +79,7 @@ export function DownButton() {
   )
 }
 
-export function FirstSectionBackground() {
+function FirstSectionBackground() {
   return (
     <>
       { /* Background before animation */}
@@ -101,7 +102,7 @@ export function FirstSectionBackground() {
   )
 }
 
-export function Headline() {
+function Headline() {
   return (
     <h1 className='flex flex-col text-5xl md:text-8xl'>
       {headlineArray.map((word, index) => (
@@ -125,7 +126,7 @@ export function Headline() {
   )
 }
 
-export function DropElement({ children }: { children: React.ReactNode }) {
+function DropElement({ children }: { children: React.ReactNode }) {
   const [visible, setVisible] = useState(false)
 
   // Display sections after the second one following subTitleAnimationTime
@@ -138,4 +139,29 @@ export function DropElement({ children }: { children: React.ReactNode }) {
   }, [])
 
   if (visible) return children
+}
+
+export function RootProvider() {
+  return (
+    <>
+      <Header />
+
+      <main>
+        <DownButton />
+
+        {/* First Section */}
+        <div className='min-h-svh flex flex-col justify-center ml-5 md:ml-10'>
+          <FirstSectionBackground />
+          <Headline />
+        </div>
+
+        <DropElement>
+          {/* Secound Section */}
+          <div className='flex' id='secoundSection'>
+
+          </div>
+        </DropElement>
+      </main>
+    </>
+  )
 }
