@@ -190,7 +190,6 @@ export function RootProvider() {
       <Header />
 
       <main>
-
         {/* First Section */}
         <div className='min-h-svh flex flex-col justify-center ml-5 md:ml-10'>
           <FirstSectionBackground />
@@ -212,7 +211,11 @@ export function RootProvider() {
             </div>
           </div>
 
-          <div className='min-h-svh flex flex-col justify-center'>
+          <div className='min-h-svh flex' id='secoundSection'>
+
+          </div>
+
+          <div className='min-h-[70svh] flex flex-col justify-center'>
             <div className='mx-auto w-[90%] md:w-[85%] lg:w-[60%]'>
               <h1 className='md:text-5xl text-2xl'>That’s all for my introduction.</h1>
               <h2 className='md:text-4xl text-lg font-light'>Where would you like to go <span className='text-pink-500'>next</span>?</h2>
