@@ -7,12 +7,13 @@ import { buttonVariants } from '@/components/ui/button'
 
 // Hooks
 import { useState, useEffect } from 'react'
+import { useMediaQuery } from 'usehooks-ts'
 
 // Components
 import Link from 'next/link'
 import { motion } from 'motion/react'
-import { FaArrowDown } from 'react-icons/fa6'
-import Image from 'next/image'
+import { FaArrowDown, FaBox } from 'react-icons/fa6'
+import { MdOutlineQueueMusic } from 'react-icons/md'
 
 const headlineArray = projectConfig.headline.split(' ')
 const headlineDelay = 0.6
@@ -38,7 +39,7 @@ function Header() {
 
               className={cn(
                 buttonVariants({ variant: 'link' }),
-                'inline-block md:text-md cursor-pointer'
+                'inline-block text-sm md:text-md cursor-pointer'
               )}
             >
               {headerLinkData.name}
@@ -64,13 +65,14 @@ function DownButton() {
 
       className={cn(
         buttonVariants({ variant: 'outline' }),
-        'absolute bottom-0 left-1/2 -translate-x-1/2 rounded-full my-3 md:my-6 cursor-pointer'
+        'absolute bottom-0 left-1/2 -translate-x-1/2 rounded-full my-6 cursor-pointer'
       )}
 
       onClick={() => {
         // Scroll to secound section
         document.getElementById('secoundSection')?.scrollIntoView({
-          behavior: 'smooth'
+          behavior: 'smooth',
+          block: 'start'
         })
       }}
     >
@@ -104,7 +106,7 @@ function FirstSectionBackground() {
 
 function Headline() {
   return (
-    <h1 className='flex flex-col text-5xl md:text-8xl'>
+    <h1 className='flex flex-col text-5xl md:text-7xl lg:text-8xl'>
       {headlineArray.map((word, index) => (
         <motion.span
           initial={{ opacity: 0, x: -50 }}
@@ -141,24 +143,85 @@ function DropElement({ children }: { children: React.ReactNode }) {
   if (visible) return children
 }
 
+function ArtExplain() {
+  const isLg = useMediaQuery('(min-width: 1024px)')
+
+  const list: { title: string, description: string }[] = [
+    {
+      title: 'Program',
+      description: 'The first art I attempted and loved. This art allows for the creation of apps, websites, and systems.'
+    },
+
+    {
+      title: '3D',
+      description: 'The art that gives form to my imagination. This art can speaks my values.'
+    },
+
+    {
+      title: 'Game Develop',
+      description: 'The art I find most difficult. This art reminded me of my long-time wish to make video games.'
+    }
+  ]
+
+  return list.map((data, index) => (
+    <motion.div
+      initial={{ opacity: 0, y: isLg ? 50 : 0, x: !isLg ? -50 : 0 }}
+      whileInView={{ opacity: 1, y: 0, x: 0 }}
+      viewport={{ once: true }}
+
+      transition={{
+        duration: 0.4,
+        delay: (1 + index) * 0.2,
+        ease: [0, 0, 0, 1]
+      }}
+
+      key={index}
+      className='lg:w-[30%] flex flex-col gap-1'
+    >
+      <h2 className='md:text-2xl text-lg'>{data.title}</h2>
+      <h3 className='text-muted-foreground md:text-lg text-sm'>{data.description}</h3>
+    </motion.div>
+  ))
+}
+
 export function RootProvider() {
   return (
     <>
       <Header />
 
       <main>
-        <DownButton />
 
         {/* First Section */}
         <div className='min-h-svh flex flex-col justify-center ml-5 md:ml-10'>
           <FirstSectionBackground />
           <Headline />
+          <DownButton />
         </div>
 
         <DropElement>
           {/* Secound Section */}
-          <div className='flex' id='secoundSection'>
+          <div className='min-h-svh flex' id='secoundSection'>
+            <div className='w-[50%]'></div>
+            <div className='w-[50%]'></div>
+          </div>
 
+          <div className='justify-center flex flex-col'>
+            <h1 className='md:text-4xl mb-10 md:mb-15 mx-auto text-2xl'>My types of art</h1>
+            <div className='flex flex-col lg:flex-row justify-around w-[85%] md:w-[65%] mx-auto gap-10'>
+              <ArtExplain />
+            </div>
+          </div>
+
+          <div className='min-h-svh flex flex-col justify-center'>
+            <div className='mx-auto w-[90%] md:w-[85%] lg:w-[60%]'>
+              <h1 className='md:text-5xl text-2xl'>That’s all for my introduction.</h1>
+              <h2 className='md:text-4xl text-lg font-light'>Where would you like to go <span className='text-pink-500'>next</span>?</h2>
+
+              <div className='flex items-center mt-10 ml-auto w-fit'>
+                <Link href='/' className={cn(buttonVariants({ variant: 'link' }), 'text-sm md:text-xl')}>Product Page</Link>
+                <Link href='/' className={cn(buttonVariants({ variant: 'link' }), 'text-sm md:text-xl')}>Favorite Music</Link>
+              </div>
+            </div>
           </div>
         </DropElement>
       </main>

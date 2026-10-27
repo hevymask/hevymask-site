@@ -31,7 +31,7 @@ export function Header({ className }: { className?: string }) {
       <div className='ml-auto flex items-center'>
         {headerLinks.map((linkData, index) => (
           <Link key={index} href={linkData.link}>
-            <span className={cn(buttonVariants({ variant: 'link' }), 'inline-block md:text-md cursor-pointer')}>
+            <span className={cn(buttonVariants({ variant: 'link' }), 'inline-block text-sm md:text-md cursor-pointer')}>
               {linkData.name}
             </span>
           </Link>
