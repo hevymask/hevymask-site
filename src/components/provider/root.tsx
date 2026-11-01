@@ -199,26 +199,20 @@ export function RootProvider() {
 
         <DropElement>
           {/* Secound Section */}
-          <div className='min-h-svh flex' id='secoundSection'>
-            <div className='w-[50%]'></div>
-            <div className='w-[50%]'></div>
-          </div>
-
-          <div className='justify-center flex flex-col'>
-            <h1 className='md:text-4xl mb-10 md:mb-15 mx-auto text-2xl'>My types of art</h1>
-            <div className='flex flex-col lg:flex-row justify-around w-[85%] md:w-[65%] mx-auto gap-10'>
+          <div className='justify-center flex flex-col min-h-svh w-[85%] md:w-[70%] mx-auto' id='secoundSection'>
+            <h1 className='md:text-4xl mb-10 md:mb-20 lg:mb-15 text-2xl'>I am the these types of digital artist :)</h1>
+            <div className='flex flex-col lg:flex-row lg:justify-between gap-5 md:gap-10 lg:gap-0'>
               <ArtExplain />
             </div>
           </div>
 
-          <div className='min-h-svh flex' id='secoundSection'>
+          <div className='min-h-svh' id='secoundSection'>
 
           </div>
 
-          <div className='min-h-[70svh] flex flex-col justify-center'>
-            <div className='mx-auto w-[90%] md:w-[85%] lg:w-[60%]'>
-              <h1 className='md:text-5xl text-2xl'>That’s all for my introduction.</h1>
-              <h2 className='md:text-4xl text-lg font-light'>Where would you like to go <span className='text-pink-500'>next</span>?</h2>
+          <div className='min-h-svh flex flex-col justify-center'>
+            <div className='mx-auto w-[90%] md:w-[85%]'>
+              <h1 className='md:text-5xl text-2xl'>Where would you like to go <span className='text-blue-500'>next</span>?</h1>
 
               <div className='flex items-center mt-10 ml-auto w-fit'>
                 <Link href='/' className={cn(buttonVariants({ variant: 'link' }), 'text-sm md:text-xl')}>Product Page</Link>
