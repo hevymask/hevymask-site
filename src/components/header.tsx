@@ -28,7 +28,7 @@ export const headerLinks: { link: Route, name: string }[] = [
 
 export function Header({ className }: { className?: string }) {
   return (
-    <header className={cn('py-4 pr-4 w-full flex items-center sticky', className)}>
+    <header className={cn('py-3 pr-4 w-full flex items-center sticky', className)}>
       <div className='ml-auto flex items-center gap-3'>
         {headerLinks.map((data, index) => (
           <Link key={index} href={data.link}>

@@ -53,7 +53,7 @@ function Header() {
 
 function FirstSection() {
   return (
-    <div className='min-h-svh flex flex-col justify-center ml-3 md:ml-5'>
+    <div className='min-h-svh flex flex-col justify-center ml-4'>
       { /* Before Animation Background */}
       <div className='bg-foreground/40 size-full absolute inset-0 -z-20' />
 
@@ -104,7 +104,7 @@ function FirstSection() {
 
         className={cn(
           buttonVariants({ variant: 'outline' }),
-          'absolute bottom-0 left-1/2 -translate-x-1/2 rounded-full my-4 cursor-pointer'
+          'absolute bottom-0 left-1/2 -translate-x-1/2 rounded-full my-3 cursor-pointer'
         )}
 
         onClick={() => {
@@ -155,9 +155,9 @@ function SecoundSection() {
   ]
 
   return (
-    <div className='justify-center flex flex-col min-h-svh w-[85%] md:w-[70%] mx-auto' id='secoundSection'>
-      <h1 className='md:text-4xl mb-10 md:mb-20 lg:mb-15 text-2xl'>I am the these types of digital artist :)</h1>
-      <div className='flex flex-col lg:flex-row lg:justify-between gap-5 md:gap-10 lg:gap-0'>
+    <div className='justify-center flex flex-col min-h-svh px-4' id='secoundSection'>
+      <h1 className='text-center mb-12 text-xl'>I'm the these types of artist</h1>
+      <div className='flex flex-col gap-8'>
         {explanationList.map((data, index) => (
           <motion.div
             initial={{ opacity: 0, y: isLg ? 50 : 0, x: !isLg ? -50 : 0 }}
@@ -171,10 +171,10 @@ function SecoundSection() {
             }}
 
             key={index}
-            className='lg:w-[30%] flex flex-col gap-1'
+            className='flex flex-col gap-2'
           >
-            <h2 className='md:text-2xl text-lg'>{data.title}</h2>
-            <h3 className='text-muted-foreground md:text-lg text-sm'>{data.description}</h3>
+            <h2 className='text-lg'>{data.title}</h2>
+            <h3 className='text-muted-foreground text-sm'>{data.description}</h3>
           </motion.div>
         ))}
       </div>
