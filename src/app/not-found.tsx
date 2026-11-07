@@ -16,8 +16,8 @@ export default function() {
   return (
     <main className='flex min-h-svh flex-col items-center justify-center'>
       <div className='flex gap-3 items-center'>
-        <p className='text-3xl'>404</p>
-        <p className='text-2xl'>Not Found</p>
+        <p className='text-2xl'>404</p>
+        <p className='text-xl'>Not Found</p>
       </div>
     </main>
   )

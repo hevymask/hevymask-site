@@ -49,7 +49,7 @@ export default function Layout({ children }: LayoutProps<'/'>) {
       // Because of ThemeProvider
       suppressHydrationWarning
     >
-      <body className='min-h-full flex flex-col overflow-x-hidden'>
+      <body className='min-h-full overflow-x-hidden'>
         <ThemeProvider />
         {children}
       </body>

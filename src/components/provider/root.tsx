@@ -23,8 +23,8 @@ const animationTime = (1 + fshArray.length + 1) * fshDelay
 
 function Header() {
   return (
-    <header className={cn('py-6 px-3 w-full flex items-center sticky', 'fixed')}>
-      <div className='ml-auto flex items-center'>
+    <header className={cn('py-3 pr-4 w-full flex items-center sticky', 'fixed')}>
+      <div className='ml-auto flex items-center gap-3'>
         {headerLinks.map((data, index) => (
           <Link key={index} href={data.link}>
             <motion.span
@@ -39,7 +39,7 @@ function Header() {
 
               className={cn(
                 buttonVariants({ variant: 'link' }),
-                'inline-block text-sm md:text-md cursor-pointer'
+                'text-xs p-0'
               )}
             >
               {data.name}
@@ -53,9 +53,9 @@ function Header() {
 
 function FirstSection() {
   return (
-    <div className='min-h-svh flex flex-col justify-center ml-5 md:ml-10'>
+    <div className='min-h-svh flex flex-col justify-center ml-3 md:ml-5'>
       { /* Before Animation Background */}
-      <div className='bg-foreground/30 size-full absolute inset-0 -z-20' />
+      <div className='bg-foreground/40 size-full absolute inset-0 -z-20' />
 
       { /* Animation Background */}
       <motion.div
@@ -72,7 +72,7 @@ function FirstSection() {
       </motion.div>
 
       {/* Headline */}
-      <h1 className='flex flex-col text-5xl md:text-7xl lg:text-8xl'>
+      <h1 className='flex flex-col text-5xl md:text-8xl'>
         {fshArray.map((word, index) => (
           <motion.span
             initial={{ opacity: 0, x: -50 }}
@@ -84,7 +84,6 @@ function FirstSection() {
               ease: [0, 1, 0, 1]
             }}
 
-            className='inline-block'
             key={index}
           >
             {word}
@@ -94,7 +93,7 @@ function FirstSection() {
 
       {/* Down Button */}
       <motion.div
-        initial={{ opacity: 0, y: -400 }}
+        initial={{ opacity: 0, y: -500 }}
         animate={{ opacity: 1, y: 0 }}
 
         transition={{
@@ -105,7 +104,7 @@ function FirstSection() {
 
         className={cn(
           buttonVariants({ variant: 'outline' }),
-          'absolute bottom-0 left-1/2 -translate-x-1/2 rounded-full my-6 cursor-pointer'
+          'absolute bottom-0 left-1/2 -translate-x-1/2 rounded-full my-4 cursor-pointer'
         )}
 
         onClick={() => {
@@ -116,7 +115,7 @@ function FirstSection() {
           })
         }}
       >
-        <FaArrowDown className='size-4' />
+        <FaArrowDown className='size-3.5' />
       </motion.div>
     </div>
   )
