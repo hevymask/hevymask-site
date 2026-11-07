@@ -1,43 +1,37 @@
 // Icons
 import { IconType } from 'react-icons'
 import { VscVscode } from 'react-icons/vsc'
-import { IoIosMusicalNote } from 'react-icons/io'
+import { FaAws } from 'react-icons/fa6'
 
 import {
-  FaAws,
-  FaMicrochip
-} from 'react-icons/fa6'
-
-import {
-  SiBlender,
-  SiTailwindcss,
-  SiGodotengine,
-  SiTauri,
-  SiTypescript,
-  SiFigma,
-  SiCloudflare,
-  SiSupabase,
-  SiReact,
-  SiNodedotjs,
-  SiGithub,
-  SiNpm,
-  SiGimp,
   SiHtml5,
   SiJavascript,
   SiCss,
-  SiVite,
-  SiShadcnui,
-  SiTanstack,
-  SiNextdotjs,
-  SiObsstudio,
-  SiZod,
-  SiDavinciresolve,
-  SiExpress,
-  SiHono,
-  SiGoogleappsscript,
+  SiGithub,
   SiPython,
+  SiGoogleappsscript,
+  SiNodedotjs,
+  SiNpm,
+  SiExpress,
   SiFirebase,
+  SiTypescript,
+  SiReact,
+  SiVite,
+  SiTailwindcss,
+  SiCloudflare,
+  SiShadcnui,
+  SiTauri,
+  SiTanstack,
+  SiObsstudio,
+  SiBlender,
+  SiNextdotjs,
+  SiZod,
+
+  SiHono,
+  SiGodotengine,
+  SiDavinciresolve,
   SiExpo,
+  SiSupabase,
   SiCplusplus
 } from 'react-icons/si'
 
@@ -52,38 +46,33 @@ export const mySkills: Skills = [
   { name: 'JavaScript', icon: SiJavascript },
   { name: 'CSS', icon: SiCss },
   { name: 'GitHub', icon: SiGithub },
-  { name: 'Google Apps Script', icon: SiGoogleappsscript },
   { name: 'Python', icon: SiPython },
+  { name: 'Google Apps Script', icon: SiGoogleappsscript },
   { name: 'Node.js', icon: SiNodedotjs },
+  { name: 'npm', icon: SiNpm },
   { name: 'Express js', icon: SiExpress },
   { name: 'Firebase', icon: SiFirebase },
   { name: 'TypeScript', icon: SiTypescript },
-  { name: 'npm', icon: SiNpm },
   { name: 'React', icon: SiReact },
   { name: 'Vite', icon: SiVite },
   { name: 'Tailwind CSS', icon: SiTailwindcss },
-  { name: 'shadcn/ui', icon: SiShadcnui },
   { name: 'Cloudflare', icon: SiCloudflare },
+  { name: 'shadcn/ui', icon: SiShadcnui },
   { name: 'Tauri', icon: SiTauri },
   { name: 'Tanstack', icon: SiTanstack },
-  { name: 'Next.js', icon: SiNextdotjs },
   { name: 'Blender', icon: SiBlender },
-  { name: 'Godot', icon: SiGodotengine },
+  { name: 'Next.js', icon: SiNextdotjs },
   { name: 'OBS', icon: SiObsstudio },
   { name: 'Zod', icon: SiZod },
-  { name: 'Hono', icon: SiHono },
-  { name: 'React Native', icon: SiReact },
-  { name: 'Expo', icon: SiExpo }
 ]
 
 export const myGoalSkills: Skills = [
-  { name: 'Gimp', icon: SiGimp },
+  { name: 'Hono', icon: SiHono },
+  { name: 'React Native', icon: SiReact },
+  { name: 'Godot', icon: SiGodotengine },
   { name: 'DaVinti Resolve', icon: SiDavinciresolve },
-  { name: 'Figma', icon: SiFigma },
   { name: 'Supabase', icon: SiSupabase },
-  { name: 'GDScript', icon: SiGodotengine },
-  { name: 'ESP32', icon: FaMicrochip },
+  { name: 'Expo', icon: SiExpo },
   { name: 'Cpp', icon: SiCplusplus },
-  { name: 'AWS', icon: FaAws },
-  { name: 'FL Studio', icon: IoIosMusicalNote }
+  { name: 'AWS', icon: FaAws }
 ]

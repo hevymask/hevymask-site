@@ -1,35 +1,46 @@
 import z from 'zod'
 
-const projectConfigSchema = z.object({
+const configSchema = z.object({
   appName: z.string(),
   headline: z.string(),
   description: z.string(),
   url: z.url(),
   auther: z.string(),
 
-  account: z.object({
-    tiktok: z.string(),
-    github: z.string(),
-    twitter: z.string()
-  }).optional()
+  account: z.array(z.object({
+    name: z.enum(['TikTok', 'GitHub', 'Twitter']),
+    url: z.url()
+  }))
 })
 
-type ProjectConfig = z.infer<typeof projectConfigSchema>
+type Config = z.infer<typeof configSchema>
 
-function setProjectConfig(config: ProjectConfig) {
-  return projectConfigSchema.parse(config)
+function setConfig(config: Config) {
+  return configSchema.parse(config)
 }
 
-// You need to customize this options.
-export const projectConfig = setProjectConfig({
+// Need to customize this options.
+export const projectConfig = setConfig({
   appName: 'hevymask.dev',
   headline: 'The anonymous digital artist',
   description: 'This is the portfolio site of heavymask, a Japanese high school student who works as artist.',
   url: 'https://hevymask.dev',
   auther: 'Hevy Mask',
-  account: {
-    tiktok: 'https://www.tiktok.com/@hevy.mask',
-    github: 'https://github.com',
-    twitter: 'https://x.com/hevymask'
-  }
+
+  account: [
+    {
+      name: 'TikTok',
+      url: 'https://www.tiktok.com/@hevy.mask'
+    },
+
+    {
+      name: 'GitHub',
+      url: 'https://github.com'
+    },
+
+    {
+      name: 'Twitter',
+      url: 'https://x.com/hevymask'
+    }
+  ]
 })

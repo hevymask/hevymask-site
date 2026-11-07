@@ -1,6 +1,6 @@
 import type { NextConfig } from 'next'
 
-const nextConfig: NextConfig = {
+const config: NextConfig = {
   turbopack: {
     rules: {
       '*.css': {
@@ -10,12 +10,13 @@ const nextConfig: NextConfig = {
     }
   },
 
+  // SSG Settings
+  output: 'export',
   images: {
     unoptimized: true,
   },
 
-  output: 'export',
   typedRoutes: true
 }
 
-export default nextConfig
+export default config
