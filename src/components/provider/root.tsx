@@ -155,8 +155,8 @@ function SecoundSection() {
   ]
 
   return (
-    <div className='justify-center flex flex-col min-h-svh px-4' id='secoundSection'>
-      <h1 className='text-center mb-12 text-xl'>I'm the these types of artist</h1>
+    <div className='justify-center items-center flex flex-col min-h-svh px-4' id='secoundSection'>
+      <h1 className='mb-12 text-xl'>I'm the these types of artist</h1>
       <div className='flex flex-col gap-8'>
         {explanationList.map((data, index) => (
           <motion.div
@@ -171,7 +171,7 @@ function SecoundSection() {
             }}
 
             key={index}
-            className='flex flex-col gap-2'
+            className='flex flex-col gap-1'
           >
             <h2 className='text-lg'>{data.title}</h2>
             <h3 className='text-muted-foreground text-sm'>{data.description}</h3>
