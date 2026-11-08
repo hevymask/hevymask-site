@@ -72,7 +72,7 @@ function FirstSection() {
       </motion.div>
 
       {/* Headline */}
-      <h1 className='flex flex-col text-5xl md:text-8xl'>
+      <h1 className='flex flex-col text-5xl md:text-7xl xl:text-8xl'>
         {fshArray.map((word, index) => (
           <motion.span
             initial={{ opacity: 0, x: -50 }}
@@ -155,9 +155,9 @@ function SecoundSection() {
   ]
 
   return (
-    <div className='justify-center items-center flex flex-col min-h-svh px-4' id='secoundSection'>
-      <h1 className='mb-12 text-xl'>I'm the these types of artist</h1>
-      <div className='flex flex-col gap-8'>
+    <div className='justify-center items-center flex flex-col min-h-svh px-4 md:min-h-[80svh]' id='secoundSection'>
+      <h1 className='mb-12 text-xl md:text-3xl xl:text-4xl'>I'm the these types of artist</h1>
+      <div className='flex flex-col gap-8 mx-2 xl:flex-row xl:flex-wrap md:items-center xl:justify-center'>
         {explanationList.map((data, index) => (
           <motion.div
             initial={{ opacity: 0, y: isLg ? 50 : 0, x: !isLg ? -50 : 0 }}
@@ -171,10 +171,10 @@ function SecoundSection() {
             }}
 
             key={index}
-            className='flex flex-col gap-1'
+            className='flex flex-col gap-1 md:w-[85%] xl:w-90'
           >
-            <h2 className='text-lg'>{data.title}</h2>
-            <h3 className='text-muted-foreground text-sm'>{data.description}</h3>
+            <h2 className='text-lg md:text-2xl xl:text-3xl'>{data.title}</h2>
+            <h3 className='text-muted-foreground text-sm md:text-lg xl:text-xl'>{data.description}</h3>
           </motion.div>
         ))}
       </div>
@@ -190,6 +190,7 @@ export function RootProvider() {
         <FirstSection />
         <DropElement>
           <SecoundSection />
+          <div className='h-svh bg-muted' />
         </DropElement>
       </main>
     </>
