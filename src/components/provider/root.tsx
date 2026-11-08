@@ -155,7 +155,7 @@ function SecoundSection() {
   ]
 
   return (
-    <div className='justify-center items-center flex flex-col min-h-svh px-4 md:min-h-[80svh]' id='secoundSection'>
+    <div className='justify-center items-center flex flex-col px-4 py-20 md:min-h-[70svh]' id='secoundSection'>
       <h1 className='mb-12 text-xl md:text-3xl xl:text-4xl'>I'm the these types of artist</h1>
       <div className='flex flex-col gap-8 mx-2 xl:flex-row xl:flex-wrap md:items-center xl:justify-center'>
         {explanationList.map((data, index) => (
