@@ -2,8 +2,19 @@ import z from 'zod'
 
 const configSchema = z.object({
   appName: z.string(),
-  headline: z.string(),
   description: z.string(),
+
+  headline: z.string().refine(
+    (value) => {
+      const words = value.split(' ')
+      return words.length <= 4
+    },
+
+    {
+      error: '4 words or fewer',
+    }
+  ),
+
   url: z.url(),
   auther: z.string(),
 
