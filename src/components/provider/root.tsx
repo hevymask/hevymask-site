@@ -39,7 +39,7 @@ function Header() {
 
               className={cn(
                 buttonVariants({ variant: 'link' }),
-                'text-sm p-0'
+                'text-xs p-0'
               )}
             >
               {data.name}
