@@ -4,6 +4,7 @@ const configSchema = z.object({
   appName: z.string(),
   description: z.string(),
 
+  // Values ​​of 4 words or less
   headline: z.string().refine(
     (value) => {
       const words = value.split(' ')
@@ -15,7 +16,7 @@ const configSchema = z.object({
     }
   ),
 
-  url: z.url(),
+  deployURL: z.url(),
   auther: z.string(),
 
   account: z.array(z.object({
@@ -33,20 +34,20 @@ function setConfig(config: Config) {
 // Need to customize this options.
 export const projectConfig = setConfig({
   appName: 'hevymask.dev',
-  headline: 'The anonymous digital artist',
-  description: 'This is the portfolio site of heavymask, a Japanese high school student who works as artist.',
-  url: 'https://hevymask.dev',
+  headline: 'An anonymous digital artist',
+  description: 'This is the portfolio site of heavymask, an anonymous digital artist.',
+  deployURL: 'https://hevymask.dev',
   auther: 'hevymask',
 
   account: [
     {
       name: 'TikTok',
-      url: 'https://www.tiktok.com/@hevy.mask'
+      url: 'https://www.tiktok.com/@hevymask'
     },
 
     {
       name: 'GitHub',
-      url: 'https://github.com'
+      url: 'https://github.com/hevymask'
     },
 
     {

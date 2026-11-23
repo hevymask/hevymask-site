@@ -10,6 +10,6 @@ export default function(): MetadataRoute.Robots {
       allow: '/'
     },
 
-    sitemap: `${projectConfig.url}/sitemap.xml`
+    sitemap: `${projectConfig.deployURL}/sitemap.xml`
   }
 }

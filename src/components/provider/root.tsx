@@ -2,7 +2,7 @@
 
 import { cn } from 'cn'
 import { headerLinks } from '@/components/header'
-import { buttonVariants } from '@/components/ui/button'
+import { buttonVariants } from '@/components/shadcn/ui/button'
 import { projectConfig } from '@/lib/projectConfig'
 
 // Hooks
@@ -14,7 +14,7 @@ import Link from 'next/link'
 import { motion } from 'motion/react'
 import { FaArrowDown } from 'react-icons/fa6'
 
-// fsh = first section headline
+// `fsh` means `first section headline`.
 const fshArray = projectConfig.headline.split(' ')
 const fshDelay = 0.6
 

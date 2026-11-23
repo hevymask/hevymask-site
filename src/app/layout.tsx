@@ -7,10 +7,10 @@ import { Oxanium } from 'next/font/google'
 import { ThemeProvider } from '@/components/provider/theme'
 import '@/index.css'
 
-const oxanium = Oxanium({ subsets: ['latin'], variable: '--font-sans' })
+const oxanium = Oxanium({ subsets:['latin'], variable:'--font-sans' })
 
 export const metadata: Metadata = {
-  metadataBase: projectConfig.url,
+  metadataBase: projectConfig.deployURL,
 
   title: {
     default: projectConfig.appName,
@@ -18,12 +18,8 @@ export const metadata: Metadata = {
   },
 
   description: projectConfig.description,
-
-  authors: {
-    name: projectConfig.auther
-  },
-
-  keywords: [projectConfig.appName, 'Portfolio', 'The anonymous digital artist'],
+  authors: { name: projectConfig.auther },
+  keywords: [projectConfig.appName, 'Portfolio'],
 
   openGraph: {
     title: projectConfig.headline,
@@ -44,7 +40,7 @@ export default function Layout({ children }: LayoutProps<'/'>) {
   return (
     <html
       lang='en'
-      className={cn('h-full antialiased', oxanium.variable)}
+      className={cn('h-full antialiased font-sans', oxanium.variable)}
 
       // Because of ThemeProvider
       suppressHydrationWarning

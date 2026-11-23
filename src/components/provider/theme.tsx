@@ -6,8 +6,10 @@ export function ThemeProvider() {
   return (
     <NextThemesProvider
       attribute="class"
-      forcedTheme="dark"
       disableTransitionOnChange
+
+      // Force dark mode
+      forcedTheme="dark"
     />
   )
 }

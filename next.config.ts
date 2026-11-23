@@ -10,7 +10,7 @@ const config: NextConfig = {
     }
   },
 
-  // SSG Settings
+  // SSG settings
   output: 'export',
   images: {
     unoptimized: true,

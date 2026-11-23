@@ -15,11 +15,10 @@
     "incremental": true,
 
     "plugins": [
-      {
-        "name": "next"
-      }
+      { "name": "next" }
     ],
 
+    /* Original options */
     "paths": {
       "@/*": ["./src/*"]
     }
@@ -31,8 +30,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
-    "**/*.mts"
-, ".project/projectConfig.ts"  ],
+    "**/*.mts",
+  ],
 
   "exclude": ["node_modules"]
 }

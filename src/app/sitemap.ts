@@ -6,7 +6,7 @@ export const dynamic = 'force-static'
 export default function(): MetadataRoute.Sitemap {
   return [
     {
-      url: projectConfig.url,
+      url: projectConfig.deployURL,
       lastModified: new Date('2026-10-11')
     }
   ]
