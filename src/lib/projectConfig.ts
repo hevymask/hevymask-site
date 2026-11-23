@@ -36,7 +36,7 @@ export const projectConfig = setConfig({
   headline: 'The anonymous digital artist',
   description: 'This is the portfolio site of heavymask, a Japanese high school student who works as artist.',
   url: 'https://hevymask.dev',
-  auther: 'Hevy Mask',
+  auther: 'hevymask',
 
   account: [
     {
