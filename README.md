@@ -7,13 +7,11 @@ My portfolio site
 4. Run `pnpm dev` to start develop!
 
 ## Technology
-- React
-- Vite
+- Next.js
 - TypeScript
-- Cloudflare(wrangler)
+- Vercel
 - Tailwind CSS
 - shadcn/ui(Radix UI)
-- Tanstack Router
 - Paraglide js
 - Zod
 - usehooks-ts
