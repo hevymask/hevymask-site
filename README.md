@@ -7,11 +7,13 @@ My portfolio site
 4. Run `pnpm dev` to start develop!
 
 ## Technology
+- Vercel
 - Next.js
 - TypeScript
-- Vercel
 - Tailwind CSS
 - shadcn/ui(Radix UI)
+- Motion
+- next-themes
 - Paraglide js
 - Zod
 - usehooks-ts

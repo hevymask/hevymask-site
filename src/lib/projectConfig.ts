@@ -5,7 +5,7 @@ const configSchema = z.object({
   appName: z.string(),
   description: z.string(),
 
-  // Values ​​of 4 words or less
+  // Values of 4 words or less
   headline: z.string().refine(
     (value) => {
       const words = value.split(' ')
